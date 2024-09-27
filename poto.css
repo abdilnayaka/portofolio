@@ -1,0 +1,460 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    scroll-behavior: smooth;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+section {
+    padding: 100px 20px;
+    text-align: center;
+    min-height: 100vh;
+    background-color: #000000;
+}
+
+/* Centering the name section */
+#intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(20px); /* Start below the view */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Button styles */
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(20px); /* Start below the view */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Flexbox layout for projects and skills */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flexbox {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(20px); /* Start below the view */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation for text and flexboxes */
+h2, p {
+    opacity: 0;
+    transform: translateY(20px); /* Start below the view */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Add animation for the CV button */
+.btn {
+    animation: fadeInSlideUp 0.6s ;
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Skills Section */
+/* General Styling for Skills Section */
+#skills {
+padding: 60px 0;
+text-align: center;
+background-color: #222; /* Dark background */
+}
+
+#skills h2 {
+font-size: 28px;
+color: white;
+margin-bottom: 40px;
+}
+
+#skills h3 {
+font-size: 24px;
+color: #4CAF50;
+margin: 20px 0;
+}
+
+/* Skills Container */
+.skills-container {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+/* Individual Skill Card */
+.skill {
+width: 200px;
+text-align: center;
+color: white;
+background-color: #333;
+padding: 20px;
+border-radius: 15px;
+transition: transform 0.3s ease;
+}
+
+.skill:hover {
+transform: translateY(-10px);
+}
+
+/* Progress Bar Wrapper */
+/* Progress Bar Animation */
+@keyframes grow {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--target-width);
+    }
+}
+
+/* Progress Bar Wrapper */
+.progress-bar {
+    background-color: #444;
+    border-radius: 20px;
+    margin: 10px 0;
+    width: 100%;
+    height: 10px;
+    overflow: hidden;
+}
+
+/* Progress Fill */
+.progress {
+    height: 100%;
+    border-radius: 20px;
+    background-color: #4CAF50;
+    width: 0; /* Initially 0, to be animated */
+}
+
+/* Target width variables */
+.python-progress { --target-width: 50%; } /* Python at 75% */
+.html-progress { --target-width: 50%; } /* HTML at 90% */
+.css-progress { --target-width: 50%; } /* CSS at 90% */
+.java-progress { --target-width: 20%; } /* Java at 70% */
+.indo-progress { --target-width: 100%; } /* Bahasa Indonesia at 100% */
+.english-progress { --target-width: 50%; } /* English at 85% */
+.japan-progress { --target-width: 0%}
+
+.contact-me {
+    background-color: #2c2f33; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    padding: 20px;
+    text-align: center;
+    width: 100%; /* Lebar penuh halaman */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan agar terpisah dari konten atas */
+    z-index: 1000; /* Agar berada di atas elemen lain */
+    font-family: "Poppins", sans-serif; /* Menggunakan font Poppins */
+    position: fixed; /* Agar tetap di bawah */
+    bottom: 0; /* Posisi di bagian bawah halaman */
+    left: 0; /* Melekat di sisi kiri halaman */
+}
+
+/* Untuk responsif jika dibutuhkan */
+@media (max-width: 768px) {
+    .contact-me {
+        padding: 15px;
+        font-size: 14px; /* Ukuran font lebih kecil untuk layar yang lebih kecil */
+    }
+}
+
+#contact h2 {
+font-size: 24px;
+margin-bottom: 10px;
+}
+
+.contact-btn {
+display: inline-block;
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border-radius: 30px;
+text-decoration: none;
+font-size: 16px;
+font-weight: 600;
+transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+background-color: #45a049;
+}
+
+#contact p {
+font-size: 14px;
+margin-top: 20px;
+}
+
+/* Untuk browser berbasis WebKit */
+/* Untuk browser berbasis WebKit */
+::-webkit-scrollbar {
+    width: 12px; /* Lebar scrollbar */
+    height: 12px; /* Tinggi scrollbar (untuk horizontal scrollbar) */
+}
+
+::-webkit-scrollbar-track {
+    background: #2c2f33; /* Warna track (jalur) scrollbar */
+    border-radius: 10px; /* Membuat track berbentuk bulat */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #7289da; /* Warna slider scrollbar */
+    border-radius: 10px; /* Membuat slider berbentuk bulat */
+    border: 3px solid #2c2f33; /* Memberi border agar terlihat seperti terpisah */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #99aaff; /* Warna slider saat hover */
+}
+
+/* Firefox scrollbar (versi terbaru) */
+* {
+    scrollbar-width: thin; /* Ukuran tipis scrollbar */
+    scrollbar-color: #7289da #2c2f33; /* Warna slider dan track */
+}
+
+/* Media query untuk layar di bawah 768px (Tablet) */
+@media (max-width: 768px) {
+
+    /* Memperkecil margin dan padding pada navigasi */
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    /* Menyesuaikan ukuran font judul dan section */
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Memperbaiki layout Flexbox untuk project dan skill */
+    .flexbox, .skill {
+        width: 100%; /* Full width pada layar kecil */
+        margin: 10px 0;
+    }
+
+    /* Menyesuaikan padding section */
+    section {
+        padding: 80px 15px;
+    }
+
+    /* Menyesuaikan layout contact-me */
+    .contact-me {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+/* Media query untuk layar di bawah 480px (Smartphone) */
+@media (max-width: 480px) {
+
+    /* Memperbesar ruang antar elemen di navbar */
+    nav ul li {
+        margin: 0 5px;
+    }
+
+    /* Menyesuaikan ukuran font lebih kecil */
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    /* Layout Flexbox akan full width pada smartphone */
+    .flexbox, .skill {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    /* Memperbaiki padding section */
+    section {
+        padding: 60px 10px;
+    }
+
+    /* Adjust the button for download CV */
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* Menyesuaikan ukuran tombol contact-me */
+    .contact-btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Navbar styling */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Default hamburger button hidden on larger screens */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hide navbar items by default in mobile view */
+#navbar {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    /* Show hamburger button on small screens */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide the menu by default on small screens */
+    #navbar {
+        display: none;
+        flex-direction: column; /* Stack the links vertically */
+        background-color: #333;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+    }
+
+    /* When navbar is visible, display it as a block */
+    #navbar.active {
+        display: flex;
+    }
+
+    /* Adjust navbar items for mobile view */
+    nav ul li {
+        margin: 10px 0; /* More space between items */
+        text-align: center; /* Center align the items */
+    }
+
+    /* Navbar item styling for mobile */
+    nav ul li a {
+        padding: 15px 0;
+        display: block;
+        width: 100%; /* Make sure the link takes the full width */
+        background-color: #333;
+    }
+}
+
+.know-me-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0; /* Button tidak terlihat awalnya */
+    transform: translateY(50px); /* Button sedikit di luar layar ke bawah */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .know-me-button.show {
+    opacity: 1; /* Button menjadi terlihat */
+    transform: translateY(0); /* Button kembali ke posisi normal */
+  }
+
+  .know-me-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+  }
+
+  .know-me-button:active {
+    transform: scale(0.95);
+  }

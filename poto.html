@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdil Nayaka Rizky - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="poto.css">
+    
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <div class="navbar-container">
+        <span class="logo">NYK</span> <!-- Tambahkan logo jika ada -->
+        <ul id="navbar">
+            <li><a href="#intro">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleNavbar()">&#9776;</div> <!-- Tombol hamburger -->
+    </div>
+</nav>
+
+<!-- Introduction Section -->
+<section id="intro">
+    <h1>Abdil Nayaka Rizky</h1>
+    <h2>Amateur Programmer</h2>
+    <a href="CV_AbdilNayakaRizky.pdf" class="btn" download="CV_AbdilNayakaRizky.pdf">Download CV</a>
+
+</section>
+
+<!-- About Me Section -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>Undergraduate informatics student interested in Data Science, AI, and Cyber Security.</p>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="flex-container">
+        <div class="flexbox">
+            <h3>Project 1</h3>
+            <p>SOON</p>
+        </div>
+        <div class="flexbox">
+            <h3>Project 2</h3>
+            <p>SOON</p>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+    <h2>Skills</h2>
+
+    <!-- Programming Languages Section -->
+    <h3>Programming Languages</h3>
+    <div class="skills-container">
+        <div class="skill">
+            <h4>Python</h4>
+            <div class="progress-bar">
+                <div class="progress python-progress"></div>
+            </div>
+            <p>Intermediate</p>
+        </div>
+
+        <div class="skill">
+            <h4>HTML</h4>
+            <div class="progress-bar">
+                <div class="progress html-progress"></div>
+            </div>
+            <p>Intermediate</p>
+        </div>
+
+        <div class="skill">
+            <h4>CSS</h4>
+            <div class="progress-bar">
+                <div class="progress css-progress"></div>
+            </div>
+            <p>Intermediate</p>
+        </div>
+
+        <div class="skill">
+            <h4>Java</h4>
+            <div class="progress-bar">
+                <div class="progress java-progress"></div>
+            </div>
+            <p>Beginner</p>
+        </div>
+
+
+        </div>
+    </div>
+
+    <!-- Daily Languages Section -->
+    <h3>Daily Languages</h3>
+    <div class="skills-container">
+        <div class="skill">
+            <h4>Bahasa Indonesia</h4>
+            <div class="progress-bar">
+                <div class="progress indo-progress"></div>
+            </div>
+            <p>Native</p>
+        </div>
+
+        <div class="skill">
+            <h4>English</h4>
+            <div class="progress-bar">
+                <div class="progress english-progress"></div>
+            </div>
+            <p>Intermediate</p>
+        </div>
+
+        <div class="skill">
+            <h4>Japanese</h4>
+            <div class="progress-bar">
+                <div class="progress japan-progress"></div>
+            </div>
+            <p>SOON</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Get to Know Me Section -->
+<section id="get-to-know">
+    <h2>Get to Know Me</h2>
+    <div class="flex-container">
+        <div class="flexbox">
+            <h3>Hobbies</h3>
+            <p>Coding, Writing, Reading, Drawing, Watching Movies, Exercising, Watching Anime</p>
+        </div>
+        <div class="flexbox">
+            <h3>Books</h3>
+            <p>Read: Book Lovers</p>
+            <p>Currently Reading: -</p>
+        </div>
+        <div class="flexbox">
+            <h3>Anime</h3>
+            <p>Favorite: One Piece</p>
+            <p>Currently Watching: One Piece, Detective Conan</p>
+        </div>
+        <div class="flexbox">
+            <h3>Favorite Football Club</h3>
+            <p>FC Barcelona</p>
+        </div>
+        <div style="text-align: center; margin-top: 50px;">
+            <p>Want to get closer to me? Click the button below.</p>
+            <a href="plummy.html" class="btn" >Know Me More</a>
+          </div>
+          
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Me</h2>
+    <a href="mailto:plumugglez@gmail.com" class="contact-btn">Email Me</a>
+    <p>&copy; 2024 Abdil Nayaka Rizky</p>
+</section>
+
+<!-- JavaScript for Smooth Scroll and Intersection Observer -->
+<script>
+    // Smooth scroll for navbar links
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            window.scrollTo({
+                top: target.offsetTop - 60, // Adjusted for navbar height
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Intersection Observer API for triggering animations when scrolled into view
+    const elementsToAnimate = document.querySelectorAll('h1, h2, p, .flexbox, .btn');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)'; // Slide up to original position
+            } else {
+                // Reset the element to make it reanimate when scrolled back
+                entry.target.style.opacity = '0';
+                entry.target.style.transform = 'translateY(20px)'; // Slide down
+            }
+        });
+    }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+    elementsToAnimate.forEach(el => observer.observe(el));
+
+    function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to animate progress bars
+function animateProgressBars() {
+    const progressBars = document.querySelectorAll('.progress');
+    progressBars.forEach((bar) => {
+        if (isInViewport(bar)) {
+            bar.style.animation = `grow 2s ease forwards`;
+            bar.style.width = getComputedStyle(bar).getPropertyValue('--target-width');
+        }
+    });
+}
+
+// Trigger the animation when the user scrolls
+window.addEventListener('scroll', animateProgressBars);
+
+// Also trigger it on page load in case the user lands directly on the section
+window.addEventListener('load', animateProgressBars);
+
+function toggleNavbar() {
+    var navbar = document.getElementById("navbar");
+    navbar.classList.toggle("active"); // Menambahkan atau menghapus class 'active'
+}
+
+function revealOnScroll() {
+    const button = document.querySelector('.know-me-button');
+    const buttonPosition = button.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2; // Saat elemen mencapai 80% dari layar
+
+    if (buttonPosition < screenPosition) {
+      button.classList.add('show');
+    }
+  }
+
+  // Event listener untuk memeriksa scroll
+  window.addEventListener('scroll', revealOnScroll);
+
+</script>
+
+</body>
+</html>
