@@ -191,7 +191,9 @@ transform: translateY(-10px);
 .python-progress { --target-width: 50%; } /* Python at 75% */
 .html-progress { --target-width: 50%; } /* HTML at 90% */
 .css-progress { --target-width: 50%; } /* CSS at 90% */
-.java-progress { --target-width: 20%; } /* Java at 70% */
+.java-progress { --target-width: 20%; }
+.go-progress { --target-width: 20%; } /* Java at 70% */
+.SQL-progress { --target-width: 20%; }/* Java at 70% */
 .indo-progress { --target-width: 100%; } /* Bahasa Indonesia at 100% */
 .english-progress { --target-width: 50%; } /* English at 85% */
 .japan-progress { --target-width: 0%}
