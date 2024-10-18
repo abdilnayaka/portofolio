@@ -86,12 +86,23 @@ h1 {
     background-color: #333;
     padding: 20px;
     border-radius: 15px;
-    width: 300px;
+    width: 300px; /* Tetapkan lebar yang konsisten */
     text-align: left;
     opacity: 0;
     transform: translateY(20px); /* Start below the view */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    flex-basis: 300px; /* Tentukan basis flex agar semua flexbox memiliki ukuran dasar yang sama */
+    flex-grow: 1; /* Flexbox akan tumbuh secara proporsional saat ada ruang lebih */
+    min-width: 200px; /* Menentukan ukuran minimum untuk flexbox */
 }
+
+@media (max-width: 768px) {
+    .flexbox {
+        width: 100%; /* Flexbox akan memenuhi layar pada perangkat kecil */
+        min-width: 100%; /* Menjaga agar lebar penuh untuk layar kecil */
+    }
+}
+
 
 /* Animation for text and flexboxes */
 h2, p {
