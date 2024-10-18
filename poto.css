@@ -460,3 +460,18 @@ margin-top: 20px;
   .know-me-button:active {
     transform: scale(0.95);
   }
+
+.button {
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            padding: 10px 20px; /* Padding */
+            border: none; /* Remove borders */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer/hand icon on hover */
+            text-decoration: none; /* Remove underline from link */
+            display: inline-block; /* Keep it inline with other elements */
+        }
+
+        .button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
